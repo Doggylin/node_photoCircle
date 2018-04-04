@@ -8,6 +8,6 @@ app.set('view engine','ejs')
 app.use('/images',express.static("./uploaded"))
 router.index(app)
 
-app.listen(3000,function(){
+app.listen(3389,function(){
     console.log('server is running');
 });
