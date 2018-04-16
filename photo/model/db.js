@@ -6,7 +6,7 @@ db.once('open',function(cllback){
     console.log('连接成功')
 })
 db.on('error',function(error){
-    cosnole.log(error);
+    console.log(error);
     mongoose.disconnect();
 });
 db.on('close',function(){

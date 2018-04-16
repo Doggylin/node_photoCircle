@@ -14,11 +14,30 @@
             <button type="submit">chaxun</button>
         </form>
     </p>
-    <form action="/upload" method="post" enctype="multipart/form-data">  
-             <input type="password" name="aaaa" id="bbbbbbb">    
-            <input type="file" id="pic" name="pic" /> </br>
-            <button type="submit">submit</button>
-    </form>  
+    <div style="border:1pt;background:red">
+        <form action="/upload" method="post" enctype="multipart/form-data">  
+            <input type="password" name="aaaa" id="bbbbbbb">    
+           <input type="file" id="pic" name="pic" /> </br>
+           <button type="submit">submit</button>
+         </form> 
+    </div>
+
+    <div style="border:1pt;background:blanchedalmond">
+        <form action="/register" method="post" enctype="multipart/form-data">  
+            <input type="text" name="phone" >
+            <input type="text" name="pwd" >    
+           <button type="submit">注册</button>
+         </form> 
+    </div>
+
+    <div style="border:1pt;background:blueviolet">
+        <form action="/login" method="post" enctype="multipart/form-data">  
+            <input type="text" name="phone" >
+            <input type="text" name="pwd" >    
+           <button type="submit">登录</button>
+         </form> 
+    </div>
+     
     
 </body>
 </html>
