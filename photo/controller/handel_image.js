@@ -93,7 +93,7 @@ exports.home_data = function(req,res){
                     var m = obj[j]
                     if (user_json){         
                         for (i = 0 ; i < m.star_ids.length ; i++){
-                            if (m.star_ids[0] == user_json['_id']){    
+                            if (m.star_ids[i] == user_json['_id']){    
                                 m.isStared = 1
                             }
                         }
@@ -110,7 +110,7 @@ exports.home_data = function(req,res){
                     let m = obj[j]
                     if (user_json){             
                         for (i = 0 ; i < m.star_ids.length ; i++){
-                            if (m.star_ids[0] == user_json['_id']){    
+                            if (m.star_ids[i] == user_json['_id']){    
                                 m.isStared = 1
                             }
                         }
