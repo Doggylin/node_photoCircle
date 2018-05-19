@@ -44,29 +44,37 @@ exports.upload = function(req,res){
         var oldPath = files.tupian.path;
         var time = (new Date()).valueOf();
         var newPath = path.normalize(__dirname + '/../uploaded/' + time + '_' + files.tupian.name)
-        fs.rename(oldPath,newPath,function(err){
-            if (err){
-                console.log(err);
-                return;
-            }
-            const newCircle = {
-                head_image_url : head_url,
-                nick_name : name,
-                isItFriend:is_it_friend,
-                message : fields.message,
-                create_time : time,
-                photo_url:time + '_' + files.tupian.name,
-                star_num : 0//Math.ceil(Math.random()*100)
-            };
-            circle.create(newCircle);
-            console.log('保存成功')
+        try {
+            fs.rename(oldPath,newPath,function(err){
+                if (err){
+                    console.log(err);
+                    return;
+                }
+                const newCircle = {
+                    head_image_url : head_url,
+                    nick_name : name,
+                    isItFriend:is_it_friend,
+                    message : fields.message,
+                    create_time : time,
+                    photo_url:time + '_' + files.tupian.name,
+                    star_num : 0//Math.ceil(Math.random()*100)
+                };
+                circle.create(newCircle);
+                console.log('保存成功')
+                const str = {
+                    'code':200,
+                    'msg':'success'
+                }
+                res.end(JSON.stringify(str))
+            })
+        } catch (err) {
+            console.log(err)
             const str = {
-                'code':200,
-                'msg':'success'
+                'code':-3,
+                'msg':'服务器异常了'
             }
             res.end(JSON.stringify(str))
-        })
-
+        }
     })   
 }
 exports.home_data = function(req,res){

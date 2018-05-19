@@ -9,4 +9,6 @@ exports.index = function(app){
     app.post('/register',handel_admin.register)
     app.post('/login',handel_admin.login)
     app.post('/dianzan',handel_circle.dianzan)
+    app.post('/pinglun',handel_circle.pinglun)
+    app.post('/getPinglun',handel_circle.getPinglun)
 }
